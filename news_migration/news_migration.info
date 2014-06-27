@@ -1,0 +1,14 @@
+name = "NEWS MIGRATION"
+description = "Module to migrate news content from the old site"
+package = "Development"
+core = 7.x
+dependencies[] = migrate
+dependencies[] = field
+dependencies[] = file
+dependencies[] = image
+dependencies[] = number
+dependencies[] = text
+ 
+files[] = news_migration.module
+files[] = news_migration.php
+
