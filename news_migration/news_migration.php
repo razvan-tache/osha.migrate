@@ -7,7 +7,7 @@ class JSONNewsMigration extends Migration {
   public function __construct() {
     parent::__construct(MigrateGroup::getInstance('json_migration'));
     // source json file
-    $list_url = 'http://despec/json/news.json';
+    $list_url = 'json/news.json';
 
     // no options, or you could specify some
     $http_options = array();
@@ -65,16 +65,6 @@ class JSONNewsMigration extends Migration {
 	"subject" => "news tags",
 	"image_link" => "the link to the image"
     );
-  }
-  
-  /**
-   * Remap fields as needed
-   * @param type $row 
-   */
-  function prepareRow($row) {
- //   rewrite the date as a timestamp
- //   list($year, $month, $day) = explode('-', $row->date);
- //   $row->date = mktime(0, 0, 0, $month, $day, $year);
   }
   
 }
