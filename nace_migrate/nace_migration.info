@@ -1,0 +1,14 @@
+name = "NACE MIGRATION"
+description = "Module to migrate NACE codes to NACE taxonomy"
+package = "Development"
+core = 7.x
+dependencies[] = migrate
+dependencies[] = field
+dependencies[] = file
+dependencies[] = image
+dependencies[] = number
+dependencies[] = text
+
+files[] = nace_migration.module
+files[] = nace_migration.php
+
