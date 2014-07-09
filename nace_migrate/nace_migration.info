@@ -11,4 +11,5 @@ dependencies[] = text
 
 files[] = nace_migration.module
 files[] = nace_migration.php
+files[] = nace_migration.drush.inc
 
