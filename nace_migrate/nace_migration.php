@@ -17,8 +17,9 @@ class JSONNaceMigration extends DynamicMigration {
 
         // TODO: Abstractization
         $this->description = 'Import the "Nace Codes" vocabulary data and hierarchy';
-        $this->vocabulary = 'nace_v3';
-        $source_file = 'json/nace2.original.json';
+        $this->vocabulary = 'nace';
+	
+        $source_file = drupal_get_path('module', 'nace_migration'). '/' . 'nace2.original.json';
 
         $this->generateCacheFromFile($source_file);
 
@@ -61,12 +62,12 @@ class JSONNaceMigration extends DynamicMigration {
         $term = new stdClass();
         $term->parent = 0;
         $term->language = 'en';
-        $term->name = t('Stub for @code', array('@code' => $source));
+        $term->name = t('Stub for @code', array('@code' => $source[0]));
         $term->vid = $voc->vid;
         $term->field_nace_code[LANGUAGE_NONE][]['value'] = $source[0];
 
         taxonomy_term_save($term);
-
+	
         return array($term->tid);
     }
 
